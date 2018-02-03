@@ -6,6 +6,7 @@ import Contents from './Contents';
 import Nav from './Nav';
 import SearchHeader from './Search/SearchHeader';
 import SearchContents from './Search/SearchContents';
+import AddPostContents from './AddPost/Contents';
 
 @connect(state => ({
   page: state.pageState.nowPage,
@@ -49,8 +50,9 @@ export default class Main extends React.Component {
             {/* <Header />
             <div styleName="headerBK"/>
             <Contents /> */}
-            <div styleName="navBK" />
-            <Nav />
+            <AddPostContents />
+            {/* <div styleName="navBK" /> */}
+            {/* <Nav /> */}
           </div>
         );
         break;

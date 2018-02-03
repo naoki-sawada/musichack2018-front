@@ -1,6 +1,9 @@
 import Button from 'material-ui/Button';
 import styles from './Contents.css';
-import Sotify from '../utils/spotify';
+import {connect} from 'react-redux';
+import {searchState} from 'actions';
+import Anime from 'react-anime';
+import Header from './Header';
 
 const message = [
   'この曲めっちゃ元気でる',
@@ -17,38 +20,19 @@ const message = [
   '勉強の時にかけてます',
 ];
 
-const playlist = [
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-]
-
+@connect(state => ({
+  searchState: state.searchState.state,
+}), {
+  searchState,
+})
 @CSSModules(styles)
-export default class Contents extends React.Component {
+export default class SearchContents extends React.Component {
   constructor(props) {
     super(props);
-    this.spotify = new Sotify();
-    this.onClickEvent = this.onClickEvent.bind(this);
   }
 
-  onClickEvent(e, type, payload) {
-    // console.log('aaaaaaaaaaaaaaaaaaaa');
-    switch (type) {
-      case 'play':
-        // this.spotify.play("spotify:album:5ht7ItJgpBH7W6vJ5BqpPr");
-        this.spotify.play(payload);
-        break;
-    
-      default:
-        break;
-    }
+  onClickEvent(e, type) {
+    console.log('aaaaaaaaaaaaaaaaaaaa');
   }
 
   render() {
@@ -68,7 +52,7 @@ export default class Contents extends React.Component {
         <div key={key} styleName="contents">
           <div styleName="line">
             <div styleName="coverImage">
-              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, 'play', playlist[key]) }}>
+              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, null) }}>
                 <img src="http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1" />
               </Button>
             </div>
@@ -86,8 +70,15 @@ export default class Contents extends React.Component {
     }
 
     return (
-      <div>
-        {lineContsts}
+      <div styleName="post">
+        <Header />
+        <div styleName="space" />
+        <div styleName="body">
+          aaaaaaaa
+        </div>
+        {/* <Anime>
+          <div>これはアニメの中身だお</div>
+        </Anime> */}
       </div>
     );
   }

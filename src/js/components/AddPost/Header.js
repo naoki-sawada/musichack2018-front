@@ -1,4 +1,4 @@
-import styles from './SearchHeader.css';
+import styles from './Header.css';
 import {connect} from 'react-redux';
 import {searchState} from 'actions';
 
@@ -8,7 +8,7 @@ import {searchState} from 'actions';
   searchState,
 })
 @CSSModules(styles)
-export default class SearchHeader extends React.Component {
+export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
@@ -29,13 +29,12 @@ export default class SearchHeader extends React.Component {
   render() {
     return (
       <div styleName="header">
-        <input
-          styleName="inputHolder"
-          type="text"
-          placeholder="search"
-          value={this.state.value}
-          onKeyPress={this.keyPress}
-          onChange={this.handleChange} />
+        <div styleName="cancel">
+          <i className="material-icons">clear</i>
+        </div>
+        <div styleName="post">
+          <button>Post</button>
+        </div>
       </div>
     );
   }

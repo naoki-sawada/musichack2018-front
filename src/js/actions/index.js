@@ -15,3 +15,7 @@ export const pageState = createAction(PAGE_STATE);
 // search state
 export const SEARCH_STATE = "SEARCH_STATE";
 export const searchState = createAction(SEARCH_STATE);
+
+// // spotify
+// export const SEARCH_STATE = "SEARCH_STATE";
+// export const searchState = createAction(SEARCH_STATE);
