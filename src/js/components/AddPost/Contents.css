@@ -1,0 +1,72 @@
+.post {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  /* border-bottom: 2px solid #F1F1F1; */
+  /* z-index: 10; */
+  /* display: flex; */
+  width: 100%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+}
+
+.songInfo {
+  display: flex;
+  /* width: 100%;
+  height: 20%; */
+  width: 100%;
+  height: 20%;
+  border-bottom: 2px solid #F1F1F1;
+}
+
+.imageArea {
+  display: flex;
+  width: 30%;
+}
+
+.imageArea img {
+  width: 100%;
+  height: 100%;
+}
+
+.infoArea {
+  display: flex;
+  flex: 1;
+  margin: 2vh;
+  font-size: 2vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.infoText div {
+  display: flex;
+  width: 100%;
+}
+
+.inputArea {
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+.inputText {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 2vh;
+  font-size: 3vh;
+  vertical-align: top;
+}
+
+.inputText::placeholder {
+  color: #CFCFCF;
+}
+
+.inputText:focus::placeholder {
+  color: #fff;
+}

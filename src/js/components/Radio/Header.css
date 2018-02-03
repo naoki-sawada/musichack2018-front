@@ -17,30 +17,8 @@
   z-index: 5;
 }
 
-.header input {
-  padding: 1vh;
-}
-
 .icon {
   display: flex;
   justify-content: center;
   align-content: center;
-}
-
-.inputHolder {
-  display: flex;
-  width: 85%;
-  height: 65%;
-  border-radius: 1vh;
-  font-size: 90%;
-  border-radius: 1.5vh;
-  border: none;
-}
-
-.inputHolder::placeholder {
-  color: #CFCFCF;
-}
-
-.inputHolder:focus::placeholder {
-  color: #fff;
 }

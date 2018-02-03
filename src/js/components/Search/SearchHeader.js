@@ -22,7 +22,7 @@ export default class SearchHeader extends React.Component {
   keyPress(event) {
     if(event.key == 'Enter'){
       console.log('enter press here! ');
-      this.props.searchState();
+      // this.props.searchState();
     }
   }
 

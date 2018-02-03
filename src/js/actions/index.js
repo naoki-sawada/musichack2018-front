@@ -15,3 +15,25 @@ export const pageState = createAction(PAGE_STATE);
 // search state
 export const SEARCH_STATE = "SEARCH_STATE";
 export const searchState = createAction(SEARCH_STATE);
+
+// post action
+export const POST_ACTION = "POST_ACTION";
+export const postAction = createAction(POST_ACTION);
+
+
+// post data
+export const POST_DATA_ID = "POST_DATA_ID";
+export const POST_DATA_IMAGE = "POST_DATA_IMAGE";
+export const POST_DATA_MESSAGE = "POST_DATA_MESSAGE";
+
+export const postDataId = createAction(POST_DATA_ID);
+export const postDataImage = createAction(POST_DATA_IMAGE);
+export const postDataMessage = createAction(POST_DATA_MESSAGE);
+
+// timeline 
+export const TIMELINE_DATA_ADD = "TIMELINE_DATA_ADD";
+export const timelineDataAdd = createAction(TIMELINE_DATA_ADD);
+
+// // spotify
+// export const SEARCH_STATE = "SEARCH_STATE";
+// export const searchState = createAction(SEARCH_STATE);

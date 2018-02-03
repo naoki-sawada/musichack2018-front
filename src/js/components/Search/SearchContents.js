@@ -53,9 +53,6 @@ export default class SearchContents extends React.Component {
               <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, null) }}>
                 <img src="http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1" />
               </Button>
-              {/* <button onClick={(e) => { this.onClickEvent(e, null) }}>
-                <img src="http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1" />
-              </button> */}
             </div>
             <div styleName="message">
               <p>{message}</p>
@@ -72,7 +69,7 @@ export default class SearchContents extends React.Component {
 
     return (
       <div>
-        {lineContsts}
+        {/* {lineContsts} */}
       </div>
     );
   }

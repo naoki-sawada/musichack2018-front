@@ -6,6 +6,11 @@ import Contents from './Contents';
 import Nav from './Nav';
 import SearchHeader from './Search/SearchHeader';
 import SearchContents from './Search/SearchContents';
+import AddPostContents from './AddPost/Contents';
+import RadioContents from './Radio/Contents';
+import RadioHeader from './Radio/Header';
+import Button from 'material-ui/Button';
+import AddIcon from 'material-ui-icons/Add';
 
 @connect(state => ({
   page: state.pageState.nowPage,
@@ -49,6 +54,19 @@ export default class Main extends React.Component {
             {/* <Header />
             <div styleName="headerBK"/>
             <Contents /> */}
+            <AddPostContents />
+            {/* <div styleName="navBK" /> */}
+            {/* <Nav /> */}
+          </div>
+        );
+        break;
+
+      case 'rss_feed':
+        contentsArea = (
+          <div styleName="main">
+            <RadioHeader />
+            <div styleName="headerBK"/>
+            <RadioContents />
             <div styleName="navBK" />
             <Nav />
           </div>

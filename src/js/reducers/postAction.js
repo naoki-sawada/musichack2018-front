@@ -2,13 +2,13 @@ import * as actions from 'actions';
 
 const initialState = {
   // nowPage: 'home',
-  nowPage: 'rss_feed',
+  value: '',
 };
 
 export default function pageState(state = initialState, action) {
   switch (action.type) {
-    case actions.PAGE_STATE:
-      return { nowPage: action.payload };
+    case actions.POST_ACTION:
+      return { value: action.payload };
     default:
       return state;
   }
