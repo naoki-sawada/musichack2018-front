@@ -32,7 +32,7 @@ export default class SearchContents extends React.Component {
 
   getSpotify() {
     this.spotify.getNowPlay((res) => {
-      // console.log(res);
+      console.log(res);
       this.setState({ img: res.data.item.album.images[0].url });
       this.setState({ title: res.data.item.name });
       this.setState({ artist: res.data.item.album.artists[0].name });

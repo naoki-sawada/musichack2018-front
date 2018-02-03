@@ -30,6 +30,10 @@ export const postDataId = createAction(POST_DATA_ID);
 export const postDataImage = createAction(POST_DATA_IMAGE);
 export const postDataMessage = createAction(POST_DATA_MESSAGE);
 
+// timeline 
+export const TIMELINE_DATA_ADD = "TIMELINE_DATA_ADD";
+export const timelineDataAdd = createAction(TIMELINE_DATA_ADD);
+
 // // spotify
 // export const SEARCH_STATE = "SEARCH_STATE";
 // export const searchState = createAction(SEARCH_STATE);

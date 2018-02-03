@@ -1,6 +1,7 @@
 import styles from './Header.css';
 import {connect} from 'react-redux';
-import {searchState, pageState, postAction} from 'actions';
+import {searchState, pageState, postAction, timelineDataAdd} from 'actions';
+import DB from 'utils/DB';
 
 @connect(state => ({
   searchState: state.searchState.state,
@@ -10,6 +11,7 @@ import {searchState, pageState, postAction} from 'actions';
   searchState,
   pageState,
   postAction,
+  timelineDataAdd,
 })
 @CSSModules(styles)
 export default class Header extends React.Component {
@@ -18,11 +20,14 @@ export default class Header extends React.Component {
     this.state = { value: '' };
     this.onCancel = this.onCancel.bind(this);
     this.onPost = this.onPost.bind(this);
+    this.db = new DB();
   }
 
   onPost() {
     if (this.props.value !== '') {
       console.log('post!', this.props.value, this.props.postState);
+      this.db.addPost(this.props.postState);
+      // this.props.timelineDataAdd(this.props.postState);
       this.props.pageState('home');
       this.props.postAction('');
     }

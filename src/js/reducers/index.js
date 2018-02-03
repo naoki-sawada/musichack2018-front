@@ -4,6 +4,7 @@ import pageState from './pageState';
 import searchState from './searchState';
 import postAction from './postAction';
 import postState from './postState';
+import timelineData from './timelineData';
 
 export default combineReducers({
   test,
@@ -11,4 +12,5 @@ export default combineReducers({
   searchState,
   postAction,
   postState,
+  timelineData,
 });

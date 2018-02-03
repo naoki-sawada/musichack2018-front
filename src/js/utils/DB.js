@@ -4,18 +4,18 @@ export default class DB {
   constructor() {
   }
 
-  getPostList(callback) {
+  getTimeline(callback) {
     const ax2 = axios.create({
-      method: 'GET',
-      baseURL: 'https://api.spotify.com/v1/me/player',
+      method: 'POST',
+      baseURL: 'http://13.115.254.67/Contribution/select',
       headers: {
-        'Authorization': `Bearer ${TOKEN}`,
+        // 'Authorization': `Bearer ${TOKEN}`,
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        // 'Accept': 'application/json',
       },
     });
 
-    ax2.get('/', {})
+    ax2.post('/', {})
     .then(function (response) {
       console.log(response);
       callback(response);

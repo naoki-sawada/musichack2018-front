@@ -1,7 +1,7 @@
 import axios from 'axios';
 const SpotifyWebApi = require('spotify-web-api-node');
 
-const TOKEN = "BQDAtn44xqrd5eXg6Rq-GUk1OeaFzSf3pCQAm8z4o6oh2A13wECE7O8UTRiQZ4HtahoOynUSUWGpKTsoMNruL_Q-6VFkpifNhI_vu8uIcYMBFMH_gTowPa4cdto_F-Yc2dw6MWt5J3vo07NRhCOM1AU";
+const TOKEN = "BQBe_NXCrD4qmMqrP6e65j8cWcNxvuZNwiatYEWXi7WDvumv0LLjJP88Yk-1WqOzZ74t5-nc_oN8taALsMJofIvKsXy60pgdsyk0GG7u4nDAUcW-6TrtZ5GPT8t0HTbgQRmle5WFeYv2khvXm8hzd_sOo8C2AKTrYdrQpEFgdb9EaNG7EYDQ1tchvlV-y2Vd_Tp-XnQlZK5jEDUq-jFjSDoej5NBFG4NO8ZG-mrvfzD6tjFDhehBJRhRZnYaTx2rmvIuAgf6Css";
 
 export default class Spotify {
   constructor() {
@@ -33,9 +33,30 @@ export default class Spotify {
   }
 
   play(context_uri) {
+    // const ax2 = axios.create({
+    //   method: 'PUT',
+    //   baseURL: 'https://api.spotify.com/v1/me/player/play',
+    //   headers: {
+    //     'Authorization': `Bearer ${TOKEN}`,
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json',
+    //   },
+    //   data: {
+    //     "context_uri": context_uri,
+    //   },
+    // });
+
+    // ax2.put('/', {})
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
+
     const ax2 = axios.create({
-      method: 'PUT',
-      baseURL: 'https://api.spotify.com/v1/me/player/play',
+      method: 'POST',
+      baseURL: 'http://localhost:3080/message',
       headers: {
         'Authorization': `Bearer ${TOKEN}`,
         'Content-Type': 'application/json',
@@ -46,7 +67,7 @@ export default class Spotify {
       },
     });
 
-    ax2.put('/', {})
+    ax2.post('/', {})
     .then(function (response) {
       console.log(response);
     })
