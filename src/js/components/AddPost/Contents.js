@@ -1,84 +1,69 @@
 import Button from 'material-ui/Button';
 import styles from './Contents.css';
 import {connect} from 'react-redux';
-import {searchState} from 'actions';
+import {postAction} from 'actions';
 import Anime from 'react-anime';
 import Header from './Header';
-
-const message = [
-  'この曲めっちゃ元気でる',
-  'わーい。',
-  '勉強の時にかけてます',
-  'この曲めっちゃ元気でるaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbaaaaaaaaaaaaaaaaaa',
-  'わーい。',
-  '勉強の時にかけてます',
-  'この曲めっちゃ元気でる',
-  'わーい。',
-  '勉強の時にかけてます',
-  'この曲めっちゃ元気でる',
-  'わーい。',
-  '勉強の時にかけてます',
-];
+import Sotify from 'utils/spotify';
 
 @connect(state => ({
   searchState: state.searchState.state,
+  value: state.postAction.value,
 }), {
-  searchState,
+  postAction,
 })
 @CSSModules(styles)
 export default class SearchContents extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { artist: '', track: '', title: '', img: null, id: '' };
+    this.spotify = new Sotify();
+    this.handleChange = this.handleChange.bind(this);
+    this.getSpotify = this.getSpotify.bind(this);
   }
 
-  onClickEvent(e, type) {
-    console.log('aaaaaaaaaaaaaaaaaaaa');
+  handleChange(event) {
+    this.props.postAction(event.target.value);
+  }
+
+  getSpotify() {
+    this.spotify.getNowPlay((res) => {
+      console.log(res);
+      this.setState({ img: res.data.item.album.images[0].url });
+      this.setState({ title: res.data.item.name });
+      this.setState({ artist: res.data.item.album.artists[0].name });
+      this.setState({ album: res.data.item.album.name });
+      this.setState({ id: res.data.item.uri });
+    });
+  }
+
+  componentDidMount() {
+    this.getSpotify();
   }
 
   render() {
-    let line = null;
-    line = (
-      <div styleName="line">
-        <div styleName="coverImage">
-          イメージだよ
-        </div>
-        <div styleName="message">
-          あああああああ
-        </div>
-      </div>
-    );
-    const lineMaker = (key, image, message) => {
-      return (
-        <div key={key} styleName="contents">
-          <div styleName="line">
-            <div styleName="coverImage">
-              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, null) }}>
-                <img src="http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1" />
-              </Button>
-            </div>
-            <div styleName="message">
-              <p>{message}</p>
-            </div>
-          </div>
-        </div>
-      )
-    };
-
-    let lineContsts = [];
-    for (let i = 0; i < 10; i++) {
-      lineContsts.push(lineMaker(i, null, message[i]));
-    }
-
     return (
       <div styleName="post">
         <Header />
-        <div styleName="space" />
         <div styleName="body">
-          aaaaaaaa
+          <div styleName="songInfo">
+            <div styleName="imageArea">
+              <img src={this.state.img} />
+            </div>
+            <div styleName="infoArea">
+              <div>Title: {this.state.title}</div>
+              <div>Artist: {this.state.artist}</div>
+              <div>Album: {this.state.album}</div>
+            </div>
+          </div>
+          <div styleName="inputArea">
+            <textarea
+              styleName="inputText"
+              value={this.props.value}
+              onChange={this.handleChange}
+              placeholder="メッセージを入力" />
+          </div>
         </div>
-        {/* <Anime>
-          <div>これはアニメの中身だお</div>
-        </Anime> */}
       </div>
     );
   }

@@ -1,11 +1,14 @@
 import styles from './Header.css';
 import {connect} from 'react-redux';
-import {searchState} from 'actions';
+import {searchState, pageState, postAction} from 'actions';
 
 @connect(state => ({
   searchState: state.searchState.state,
+  value: state.postAction.value,
 }), {
   searchState,
+  pageState,
+  postAction,
 })
 @CSSModules(styles)
 export default class Header extends React.Component {
@@ -13,6 +16,8 @@ export default class Header extends React.Component {
     super(props);
     this.state = { value: '' };
     this.handleChange = this.handleChange.bind(this);
+    this.onCancel = this.onCancel.bind(this);
+    this.onPost = this.onPost.bind(this);
   }
 
   handleChange(event) {
@@ -26,14 +31,33 @@ export default class Header extends React.Component {
     }
   }
 
+  onPost() {
+    if (this.props.value !== '') {
+      console.log('post!', this.props.value);
+      this.props.pageState('home');
+      this.props.postAction('');
+    }
+  }
+
+  onCancel() {
+    this.props.pageState('home');
+  }
+
   render() {
+    let postable = { color: "#CFCFCF" };
+    if (this.props.value !== '') {
+      postable = {};
+    }
+
     return (
       <div styleName="header">
         <div styleName="cancel">
-          <i className="material-icons">clear</i>
+          <button onClick={this.onCancel}>
+            <i className="material-icons">clear</i>
+          </button>
         </div>
         <div styleName="post">
-          <button>Post</button>
+          <button style={postable} onClick={this.onPost}>Post</button>
         </div>
       </div>
     );

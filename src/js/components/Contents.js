@@ -2,33 +2,15 @@ import Button from 'material-ui/Button';
 import styles from './Contents.css';
 import Sotify from '../utils/spotify';
 
-const message = [
-  'この曲めっちゃ元気でる',
-  'わーい。',
-  '勉強の時にかけてます',
-  'この曲めっちゃ元気でるaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbaaaaaaaaaaaaaaaaaa',
-  'わーい。',
-  '勉強の時にかけてます',
-  'この曲めっちゃ元気でる',
-  'わーい。',
-  '勉強の時にかけてます',
-  'この曲めっちゃ元気でる',
-  'わーい。',
-  '勉強の時にかけてます',
+const homeContents = [
+  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
+  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
+  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
+  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
+  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
+  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
 ];
 
-const playlist = [
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-  'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr',
-]
 
 @CSSModules(styles)
 export default class Contents extends React.Component {
@@ -63,13 +45,14 @@ export default class Contents extends React.Component {
         </div>
       </div>
     );
-    const lineMaker = (key, image, message) => {
+    const lineMaker = (key, payload) => {
+      const { message, image, id } = payload;
       return (
         <div key={key} styleName="contents">
           <div styleName="line">
             <div styleName="coverImage">
-              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, 'play', playlist[key]) }}>
-                <img src="http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1" />
+              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, 'play', id) }}>
+                <img src={image} />
               </Button>
             </div>
             <div styleName="message">
@@ -81,9 +64,12 @@ export default class Contents extends React.Component {
     };
 
     let lineContsts = [];
-    for (let i = 0; i < 10; i++) {
-      lineContsts.push(lineMaker(i, null, message[i]));
-    }
+    homeContents.forEach((elem, index, array) => {
+      lineContsts.push(lineMaker(index, elem));
+    });
+    // for (let i = 0; i < 10; i++) {
+    //   lineContsts.push(lineMaker(i, null, message[i]));
+    // }
 
     return (
       <div>
