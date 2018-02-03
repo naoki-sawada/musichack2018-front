@@ -5,6 +5,7 @@ import {searchState, pageState, postAction} from 'actions';
 @connect(state => ({
   searchState: state.searchState.state,
   value: state.postAction.value,
+  postState: state.postState,
 }), {
   searchState,
   pageState,
@@ -15,25 +16,13 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
-    this.handleChange = this.handleChange.bind(this);
     this.onCancel = this.onCancel.bind(this);
     this.onPost = this.onPost.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  keyPress(event) {
-    if(event.key == 'Enter'){
-      console.log('enter press here! ');
-      // this.props.searchState();
-    }
-  }
-
   onPost() {
     if (this.props.value !== '') {
-      console.log('post!', this.props.value);
+      console.log('post!', this.props.value, this.props.postState);
       this.props.pageState('home');
       this.props.postAction('');
     }

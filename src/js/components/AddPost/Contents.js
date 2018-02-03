@@ -1,7 +1,7 @@
 import Button from 'material-ui/Button';
 import styles from './Contents.css';
 import {connect} from 'react-redux';
-import {postAction} from 'actions';
+import {postAction,postDataId,postDataMessage,postDataImage} from 'actions';
 import Anime from 'react-anime';
 import Header from './Header';
 import Sotify from 'utils/spotify';
@@ -11,6 +11,9 @@ import Sotify from 'utils/spotify';
   value: state.postAction.value,
 }), {
   postAction,
+  postDataId,
+  postDataMessage,
+  postDataImage,
 })
 @CSSModules(styles)
 export default class SearchContents extends React.Component {
@@ -24,16 +27,20 @@ export default class SearchContents extends React.Component {
 
   handleChange(event) {
     this.props.postAction(event.target.value);
+    this.props.postDataMessage(this.props.value);
   }
 
   getSpotify() {
     this.spotify.getNowPlay((res) => {
-      console.log(res);
+      // console.log(res);
       this.setState({ img: res.data.item.album.images[0].url });
       this.setState({ title: res.data.item.name });
       this.setState({ artist: res.data.item.album.artists[0].name });
       this.setState({ album: res.data.item.album.name });
       this.setState({ id: res.data.item.uri });
+      // console.log(this.props);
+      this.props.postDataId(this.state.id);
+      this.props.postDataImage(this.state.img);
     });
   }
 

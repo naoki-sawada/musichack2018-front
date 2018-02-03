@@ -2,7 +2,7 @@ import * as actions from 'actions';
 
 const initialState = {
   // nowPage: 'home',
-  nowPage: 'search',
+  nowPage: 'rss_feed',
 };
 
 export default function pageState(state = initialState, action) {

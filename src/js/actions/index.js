@@ -20,6 +20,16 @@ export const searchState = createAction(SEARCH_STATE);
 export const POST_ACTION = "POST_ACTION";
 export const postAction = createAction(POST_ACTION);
 
+
+// post data
+export const POST_DATA_ID = "POST_DATA_ID";
+export const POST_DATA_IMAGE = "POST_DATA_IMAGE";
+export const POST_DATA_MESSAGE = "POST_DATA_MESSAGE";
+
+export const postDataId = createAction(POST_DATA_ID);
+export const postDataImage = createAction(POST_DATA_IMAGE);
+export const postDataMessage = createAction(POST_DATA_MESSAGE);
+
 // // spotify
 // export const SEARCH_STATE = "SEARCH_STATE";
 // export const searchState = createAction(SEARCH_STATE);
