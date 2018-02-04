@@ -72,9 +72,3 @@ export default class Contents extends React.Component {
     );
   }
 }
-https://open.spotify.com/track/4dFXu3u2hTk2cfVjK2IGRX
-https://open.spotify.com/track/04JL2liXXV9B9coeGuUsPw
-https://open.spotify.com/track/5TOSXYdmL0g0cjgS5EmERP
-https://open.spotify.com/track/2dQ4alICWrgs9gyYUOWlEg
-https://open.spotify.com/track/1zNNR1sQvk2W55jqweXFiX
-https://open.spotify.com/track/4HFqtbl5D5gJhtjnGRhGgY
