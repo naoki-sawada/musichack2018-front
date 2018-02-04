@@ -22,13 +22,14 @@ export default class Contents extends React.Component {
     this.onClickEvent = this.onClickEvent.bind(this);
   }
 
-  onClickEvent(e, type, payload) {
+  onClickEvent(e, type, payload, text) {
+    console.log(payload)
     switch (type) {
       case 'play':
-        this.spotify.play(payload);
-        this.spotify.voice('カレーを食べるよ', () => {
-          new Audio('test.mp3').play();
+        this.spotify.voice(text, () => {
+          new Audio('http://localhost:9999/test.mp3').play();
         });
+        this.spotify.play(payload);
         break;
     
       default:
@@ -47,7 +48,7 @@ export default class Contents extends React.Component {
         <div key={key} styleName={contentName} >
           <div styleName="line">
             <div styleName="coverImage">
-              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, 'play', id) }}>
+              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, 'play', id, message) }}>
                 <img src={image} />
               </Button>
             </div>
