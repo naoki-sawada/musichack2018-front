@@ -1,7 +1,7 @@
 import axios from 'axios';
 const SpotifyWebApi = require('spotify-web-api-node');
 
-const TOKEN = "BQBe_NXCrD4qmMqrP6e65j8cWcNxvuZNwiatYEWXi7WDvumv0LLjJP88Yk-1WqOzZ74t5-nc_oN8taALsMJofIvKsXy60pgdsyk0GG7u4nDAUcW-6TrtZ5GPT8t0HTbgQRmle5WFeYv2khvXm8hzd_sOo8C2AKTrYdrQpEFgdb9EaNG7EYDQ1tchvlV-y2Vd_Tp-XnQlZK5jEDUq-jFjSDoej5NBFG4NO8ZG-mrvfzD6tjFDhehBJRhRZnYaTx2rmvIuAgf6Css";
+const TOKEN = "BQCpXqoieOrSfu4spk2RcsoefpLuumhmy0XgTmSv5_SalTHc4KJme0SYh1RL3c72bZE_i9rTAfK1HdTa-goOi7uMS5ExIed7LxszRNFB6CsJnn7DIGLYFn_1iD3TwyNNQ9OtASYZFaughbKVRYf-JtQ";
 
 export default class Spotify {
   constructor() {
@@ -70,6 +70,25 @@ export default class Spotify {
     ax2.post('/', {})
     .then(function (response) {
       console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  voice(text, callback) {
+    const ax2 = axios.create({
+      method: 'POST',
+      baseURL: 'http://localhost:3080/voice',
+      data: {
+        text,
+      },
+    });
+
+    ax2.post('/', {})
+    .then(function (response) {
+      console.log(response);
+      callback();
     })
     .catch(function (error) {
       console.log(error);

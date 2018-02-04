@@ -32,7 +32,9 @@
     "redux-actions": "^2.0.1",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.15.3",
-    "spotify-web-api-node": "^2.5.0"
+    "spotify-web-api-node": "^2.5.0",
+    "voicetext": "^0.0.7",
+    "xmlbuilder": "^9.0.4"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",

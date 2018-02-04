@@ -3,13 +3,14 @@ import styles from './Contents.css';
 import Sotify from '../../utils/spotify';
 import { colors } from 'material-ui';
 
+
 const homeContents = [
+  { message: 'カレー食べてます🍛', image: 'http://i.scdn.co/image/2e0dc2302c29987233abe75051836cbc716b8e72', id: 'spotify:track:6871FKHumiy1Wfr6vF7Xxt' },
   { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
   { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
   { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
-  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
-  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
-  { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
+  // { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
+  // { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
 ];
 
 
@@ -25,6 +26,9 @@ export default class Contents extends React.Component {
     switch (type) {
       case 'play':
         this.spotify.play(payload);
+        this.spotify.voice('カレーを食べるよ', () => {
+          new Audio('test.mp3').play();
+        });
         break;
     
       default:
@@ -66,6 +70,7 @@ export default class Contents extends React.Component {
 
     return (
       <div>
+        <div styleName="title">公開されたラジオ</div>
         {lineContsts}
       </div>
     );

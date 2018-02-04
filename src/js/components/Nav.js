@@ -19,7 +19,8 @@ export default class Nav extends React.Component {
   }
 
   render() {
-    const iconNameList = ['home', 'search', 'add', 'rss_feed', 'account_circle'];
+    // const iconNameList = ['home', 'search', 'add', 'rss_feed', 'account_circle'];
+    const iconNameList = ['home', '', 'add', '', 'rss_feed'];
 
     let navContents = [];
     iconNameList.forEach((elem, index, array) => {
