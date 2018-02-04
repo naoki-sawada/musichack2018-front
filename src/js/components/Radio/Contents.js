@@ -46,6 +46,7 @@ export default class Contents extends React.Component {
           new Audio('http://localhost:9999/test.mp3').play();
         });
         this.spotify.play(payload);
+        this.componentWillUnmount();
         this.setState({ num });
         this.evnetAdd(num);
         break;

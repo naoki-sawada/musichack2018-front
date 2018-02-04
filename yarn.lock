@@ -84,9 +84,9 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
 
-animejs@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/animejs/-/animejs-2.2.0.tgz#35eefdfc535b81949c9cb06f0b3e60c02e6fdc80"
+animejs@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-1.1.1.tgz#be910a58735b467a52ccd858ea60f02f877bd92e"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -2786,10 +2786,6 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
-lodash.isequal@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
-
 lodash.isfinite@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/lodash.isfinite/-/lodash.isfinite-3.3.2.tgz#fb89b65a9a80281833f0b7478b3a5104f898ebb3"
@@ -3772,12 +3768,11 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-anime@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-anime/-/react-anime-2.1.0.tgz#e11f0cbb868f7c13bba7821e9c5947325a1380c1"
+react-anime@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/react-anime/-/react-anime-0.3.4.tgz#e11c9d0b79b09bbfdc98b5f4a04b6004530ef683"
   dependencies:
-    animejs "^2.2.0"
-    lodash.isequal "^4.5.0"
+    animejs "1.1.1"
 
 react-css-modules@^4.1.0:
   version "4.7.1"

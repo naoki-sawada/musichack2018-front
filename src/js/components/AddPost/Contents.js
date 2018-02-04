@@ -50,28 +50,34 @@ export default class SearchContents extends React.Component {
 
   render() {
     return (
-      <div styleName="post">
-        <Header />
-        <div styleName="body">
-          <div styleName="songInfo">
-            <div styleName="imageArea">
-              <img src={this.state.img} />
+      // <Anime
+      //   delay={(e, i) => i * 100}
+      //   translateY={"100vh"}
+      //   direction={'reverse'}
+      //   easing={'easeOutQuint'} >
+        <div styleName="post">
+          <Header />
+          <div styleName="body">
+            <div styleName="songInfo">
+              <div styleName="imageArea">
+                <img src={this.state.img} />
+              </div>
+              <div styleName="infoArea">
+                <div>Title: {this.state.title}</div>
+                <div>Artist: {this.state.artist}</div>
+                <div>Album: {this.state.album}</div>
+              </div>
             </div>
-            <div styleName="infoArea">
-              <div>Title: {this.state.title}</div>
-              <div>Artist: {this.state.artist}</div>
-              <div>Album: {this.state.album}</div>
+            <div styleName="inputArea">
+              <textarea
+                styleName="inputText"
+                value={this.props.value}
+                onChange={this.handleChange}
+                placeholder="メッセージを入力" />
             </div>
-          </div>
-          <div styleName="inputArea">
-            <textarea
-              styleName="inputText"
-              value={this.props.value}
-              onChange={this.handleChange}
-              placeholder="メッセージを入力" />
           </div>
         </div>
-      </div>
+      // </Anime>
     );
   }
 }
