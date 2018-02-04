@@ -1,7 +1,7 @@
 import axios from 'axios';
 const SpotifyWebApi = require('spotify-web-api-node');
 
-const TOKEN = "BQCpXqoieOrSfu4spk2RcsoefpLuumhmy0XgTmSv5_SalTHc4KJme0SYh1RL3c72bZE_i9rTAfK1HdTa-goOi7uMS5ExIed7LxszRNFB6CsJnn7DIGLYFn_1iD3TwyNNQ9OtASYZFaughbKVRYf-JtQ";
+const TOKEN = "BQAeJ3wH1JYMh6hn-IC7rQuAQFVCGw0P6fcbmSKPA2bJJpt-qVhJx6PigU9ijyoIGJLJpfyhndk9P-e8Bt9J4dQH689XUsTNztWhTJ_Wr5Eyi-79lxpxxgFIGpiQx5Z-WVbCXrwnUiKhxi51x4mXf64";
 
 export default class Spotify {
   constructor() {

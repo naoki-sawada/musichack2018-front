@@ -19,10 +19,26 @@ export default class Contents extends React.Component {
   constructor(props) {
     super(props);
     this.spotify = new Sotify();
+    this.state = { num: 0 };
     this.onClickEvent = this.onClickEvent.bind(this);
+    this.evnetAdd = this.evnetAdd.bind(this);
   }
 
-  onClickEvent(e, type, payload, text) {
+  evnetAdd(num) {
+    this.interval = setInterval(()=> {
+      this.setState({ num: this.state.num + 1 });
+      if (this.state.num < homeContents.length) {
+        this.spotify.voice(homeContents[this.state.num].message, () => {
+          new Audio('http://localhost:9999/test.mp3').play();
+        });
+        this.spotify.play(homeContents[this.state.num].id );
+      } else {
+        this.componentWillUnmount();
+      }
+    }, 15 * 1000);
+  }
+
+  onClickEvent(e, type, payload, text, num) {
     console.log(payload)
     switch (type) {
       case 'play':
@@ -30,10 +46,18 @@ export default class Contents extends React.Component {
           new Audio('http://localhost:9999/test.mp3').play();
         });
         this.spotify.play(payload);
+        this.setState({ num });
+        this.evnetAdd(num);
         break;
     
       default:
         break;
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.interval) {
+      clearInterval(this.interval);
     }
   }
 
@@ -48,7 +72,7 @@ export default class Contents extends React.Component {
         <div key={key} styleName={contentName} >
           <div styleName="line">
             <div styleName="coverImage">
-              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, 'play', id, message) }}>
+              <Button style={{ padding: 0 }} onClick={(e) => { this.onClickEvent(e, 'play', id, message, key) }}>
                 <img src={image} />
               </Button>
             </div>
@@ -62,7 +86,7 @@ export default class Contents extends React.Component {
 
     let lineContsts = [];
     homeContents.forEach((elem, index, array) => {
-      if (index == 0) {
+      if (this.state.num == index) {
         lineContsts.push(lineMaker(index, elem, true));
       } else {
         lineContsts.push(lineMaker(index, elem));
@@ -71,7 +95,7 @@ export default class Contents extends React.Component {
 
     return (
       <div>
-        <div styleName="title">公開されたラジオ</div>
+        {/* <div styleName="title">公開されたラジオ</div> */}
         {lineContsts}
       </div>
     );
