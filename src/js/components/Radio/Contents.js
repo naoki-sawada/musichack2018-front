@@ -4,6 +4,7 @@ import Sotify from '../../utils/spotify';
 import { colors } from 'material-ui';
 
 const homeContents = [
+  { message: 'カレー食べてます🍛', image: 'http://i.scdn.co/image/2e0dc2302c29987233abe75051836cbc716b8e72', id: 'spotify:track:6871FKHumiy1Wfr6vF7Xxt' },
   { message: 'この曲好き！', image: 'http://i.scdn.co/image/d8ad6363ac1c6912369fbeb3b6efff419beec4d1', id: 'spotify:album:5ht7ItJgpBH7W6vJ5BqpPr' },
   { message: '通学路で聴いてます！', image: 'https://i.scdn.co/image/c5864968f30c3c7298a403b0d2c8d652a0d7c039', id: 'spotify:album:5bMtF0QUf1rKcoqOvpBEBE' },
   { message: 'かっこいいなあ', image: 'https://i.scdn.co/image/f2155133a2d08d50f2d9e84bf3fc2e1d28210c82', id: 'spotify:album:2QBJu1rJWSPtTiWxwIY2H7' },
