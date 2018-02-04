@@ -1,8 +1,8 @@
 import * as actions from 'actions';
 
 const initialState = {
-  // nowPage: 'home',
-  nowPage: 'rss_feed',
+  nowPage: 'home',
+  // nowPage: 'rss_feed',
 };
 
 export default function pageState(state = initialState, action) {
