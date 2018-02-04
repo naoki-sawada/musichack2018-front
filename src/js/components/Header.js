@@ -9,7 +9,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <div styleName="header">
-        𝓼𝓸𝓷𝓰𝓻𝓪𝓶
+        𝓸𝓽𝓸𝓰𝓻𝓪𝓶
       </div>
     );
   }

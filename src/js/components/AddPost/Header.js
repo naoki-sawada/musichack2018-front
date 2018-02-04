@@ -26,8 +26,8 @@ export default class Header extends React.Component {
   onPost() {
     if (this.props.value !== '') {
       console.log('post!', this.props.value, this.props.postState);
-      this.db.addPost(this.props.postState);
-      // this.props.timelineDataAdd(this.props.postState);
+      // this.db.addPost(this.props.postState);
+      this.props.timelineDataAdd(this.props.postState);
       this.props.pageState('home');
       this.props.postAction('');
     }

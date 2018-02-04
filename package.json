@@ -24,7 +24,7 @@
     "material-ui": "^1.0.0-beta.31",
     "material-ui-icons": "^1.0.0-beta.17",
     "react": "^15.4.2",
-    "react-anime": "^2.1.0",
+    "react-anime": "^0.3.4",
     "react-css-modules": "^4.1.0",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.1",
@@ -32,7 +32,9 @@
     "redux-actions": "^2.0.1",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.15.3",
-    "spotify-web-api-node": "^2.5.0"
+    "spotify-web-api-node": "^2.5.0",
+    "voicetext": "^0.0.7",
+    "xmlbuilder": "^9.0.4"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
