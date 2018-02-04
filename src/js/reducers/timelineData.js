@@ -15,6 +15,13 @@ const initialState = {
     { message: 'めっちゃ好きです。', image: 'https://i.scdn.co/image/470ee67213607715f6fb7e4bcb229c361ae1544d', id: 'spotify:album:0iMiaI1eFEpssUtEOw9Pia' },
     { message: '休日によく聴いています。', image: 'https://i.scdn.co/image/0008860272c2df10edd53afef9d6fbf87ce6b6ed', id: 'spotify:album:43YgVT9S2zswxoEXaxPgfm' },
     { message: '聞くとテンション上がります。', image: 'https://i.scdn.co/image/e4f2882dbb49aa5fb237be5fd27e151ea37324f6', id: 'spotify:artist:06HL4z0CvFAxyc27GXpf02' },
+    { message: '異国情緒がある曲なので旅行気分を楽しみたい人におすすめです', image: 'https://i.scdn.co/image/4d7f1a828834bd20b55a207c185eb27c4654b1ac', id: 'spotify:album:4DcqLVuCfBfgbDzns7K9mL' },
+    { message: 'いい曲だな', image: 'https://i.scdn.co/image/17b21e16fe24e654b0b3b2b4ad24ad5695545fbc', id: 'spotify:album:128Y3siYbsPpuyxKlpjLsg' },
+    { message: 'BBQなう！', image: 'https://i.scdn.co/image/e49c125dee6704e95d7c53132fb725915508fd8d', id: 'spotify:album:1nmApsog19BD430O3mPzXm' },
+    { message: 'コーヒー飲みたくなるなあ', image: 'https://i.scdn.co/image/226c53435391c08bc4f2451c49ae602098128122', id: 'spotify:album:1aeuJphtfTGTAjnW5oX5Fu' },
+    { message: '聞くとテンション上がります。', image: 'https://i.scdn.co/image/e4f2882dbb49aa5fb237be5fd27e151ea37324f6', id: 'spotify:artist:06HL4z0CvFAxyc27GXpf02' },
+    { message: '最近よくCMで流れてますね。', image: 'https://i.scdn.co/image/8f4f43e4e01a030de5c30db3eb928bfdec0da4d1', id: 'spotify:artist:5kjGRHClVacSyllOUqU1S0' },
+    { message: 'この映画、よかったよねー', image: 'https://i.scdn.co/image/4b54809568db847a8b061220568e759e56f80ba7', id: 'spotify:album:79YTP5wf0HBO3sihh5cfsN' },
   ],
 };
 
